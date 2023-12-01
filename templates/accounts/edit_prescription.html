@@ -1,0 +1,108 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}Edit digital Prescriptions {% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center mb-4">Edit Prescription</h1>
+      <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Update Prescription</button>
+        
+      </form>
+    </div>
+  </div>
+</div>
+<style>
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #f8f8f8;
+  margin-bottom: 0.5rem;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+/* Set label and input width */
+label, input {
+  display: inline-block;
+  width: 100%;
+}
+
+/* Style the form elements */
+input[type=text], select, textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+/* Change the input color on focus */
+input[type=text]:focus,select:focus, textarea:focus {
+  border-color: #000affd7;
+}
+
+/* Set button style */
+button[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type=submit]:hover {
+  background-color: #38ff40;
+}
+
+
+
+
+input[type="text"], input[type="email"], input[type="number"], select, textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #00ef19;
+  box-shadow: 0px 0px 8px rgba(243, 42, 42, 0.2);
+}
+</style>
+{% endblock %}

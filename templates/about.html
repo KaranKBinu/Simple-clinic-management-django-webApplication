@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<style>
+  /* CSS code goes here */
+  .table th {
+    background-color: #eee;
+    font-weight: bold;
+  }
+  
+  
+  .table td {
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+  
+  /* increase the font size of the footer */
+  footer {
+    font-size: 1.2em;
+  }
+</style>
+<div style="background-color: #25d366;
+            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px ;
+            border-radius: 30px;
+            box-shadow: 0px 3px 3px #ccc;
+            z-index: 9999;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0.8;">
+           
+  <a href="https://wa.me/7994667412" target="_blank" rel="noopener" style="color: #fff;
+                                                                          text-decoration: none;">
+    <img src="https://imgs.search.brave.com/mkt9M6OBNiZn2BQOW4IQtvI31KMqZB6XaL9Eb13bCIs/rs:fit:1200:1200:1/g:ce/aHR0cDovL3BsdXNw/bmcuY29tL2ltZy1w/bmcvd2hhdHNhcHAt/cG5nLXdhemFwcC1s/b2dvLXdoYXRzLXdo/YXRzYXBwLWxvZ28t/d2hhdHNhcHAtaWNv/bi0yMDUwLnBuZw" alt="WhatsApp Logo" style="height: 50px;
+                                                             margin-right: 0px;">
+    
+  </a>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>About Our Hospital</h1>
+      <p>We are a leading provider of healthcare services in our community, offering a wide range of medical specialties and cutting-edge treatments to help our patients achieve their best possible health outcomes.</p>
+      <p>At our hospital, we are committed to providing the highest level of care to our patients, with a focus on clinical excellence, patient safety, and personalized attention. Our team of doctors, nurses, and support staff work together to ensure that every patient receives the care they need, when they need it.</p>
+    </div>
+    <div class="col-md-6">
+<div style="display: flex; justify-content: center;">
+  <img src="/static/images/aboutpage.jpg" alt="About us" style="width: 400px; height: 300px;">
+</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Our History</h2>
+      <p>Our hospital was founded in 1950 by Dr. John Bhaskaran, who saw the need for a dedicated healthcare facility in our community. Over the years, we have grown and expanded our services to meet the changing needs of our patients, while always staying true to our mission of providing high-quality, compassionate care.</p>
+    </div>
+    <div class="col-md-6">
+      <h2>Our Achievements</h2>
+      <ul>
+        <li>Recipient of the 2020 Healthgrades Patient Safety Excellence Award</li>
+        <li>Named one of the Top Hospitals in the State by KERALA Medical Board </li>
+        <li>Designated as a Comprehensive Stroke Center by the Joint Commission</li>
+        <li>Received the 2021 Best Co-operative hospital Award</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container" style="align: center;">
+  <h2>Test Packages and Prices</h2>
+  <table class="table" align="center">
+    <thead>
+      <tr>
+        <th>Test Package</th>
+        <th>Price</th>
+        <th>Tests Included</th>
+        <th>Diagnosis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Basic Combo</td>
+        <td>₹100</td>
+        <td>Blood Test, Urine Test</td>
+        <td>General Health Checkup</td>
+      </tr>
+      <tr>
+        <td>Advanced Combo</td>
+        <td>₹200</td>
+        <td>Blood Test, Urine Test, X-Ray</td>
+        <td>Complete Health Checkup</td>
+        </tr>
+  <tr>
+    <td>Cardiac Combo</td>
+    <td>₹300</td>
+    <td>Blood Test, ECG, Stress Test</td>
+    <td>Cardiovascular Screening</td>
+  </tr>
+  <tr>
+    <td>Diabetes Package</td>
+    <td>₹150</td>
+    <td>Blood Test, Urine Test, Glucose Test</td>
+    <td>Diabetes Screening</td>
+  </tr>
+</tbody>
+  </table>
+  
+  </div>
+  <div class="container">
+  <h2>Departments by Floor</h2>
+  <table align="center" class="table">
+    <thead>
+      <tr>
+        <th>Floor</th>
+        <th>Department</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1st Floor</td>
+        <td>Emergency Department</td>
+        <td>1234567890</td>
+      </tr>
+      <tr>
+        <td>1st Floor</td>
+        <td>Pharmacy</td>
+        <td>0987654321</td>
+      </tr>
+      <tr>
+        <td>2nd Floor</td>
+        <td>Cardiology</td>
+        <td>1111122222</td>
+      </tr>
+      <tr>
+        <td>2nd Floor</td>
+        <td>Neurology</td>
+        <td>2222233333</td>
+      </tr>
+      <tr>
+        <td>3rd Floor</td>
+        <td>Oncology</td>
+        <td>3333344444</td>
+      </tr>
+      <tr>
+        <td>3rd Floor</td>
+        <td>Pulmonology</td>
+        <td>4444455555</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'accounts/base.html' %}
+
+{% block title %}Delete Prescription? {% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="text-center mb-4">Delete Prescription</h1>
+      <form method="POST">
+        {% csrf_token %}
+        <p>Are you sure you want to delete the prescription?</p>
+        <p><strong>Patient Name:</strong> {{ prescription.patient_name }}</p>
+        <p><strong>Doctor Name:</strong> {{ prescription.doctor_name }}</p>
+        <p><strong>Medication:</strong> {{ prescription.medication }}</p>
+        <button type="submit" class="btn btn-danger">Confirm Delete</button>
+        <a href="{% url 'Prescription_success' %}" class="btn btn-secondary">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Doctors{% endblock %}
+{% block content %}
+
+<style>
+  .doc-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #ccc;
+    padding: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 250px;
+    max-width: 300px;
+    background-color: #fff;
+  }
+  .doc-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  .doc-card h4 {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #0070ff;
+  }
+  .doc-card p {
+    margin-bottom: 0.5rem;
+  }
+  .doc-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  .doc-container .doc-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  .doc-container .doc-row:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+</style>
+<div style="background-color: #25d366;
+            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px ;
+            border-radius: 30px;
+            box-shadow: 0px 3px 3px #ccc;
+            z-index: 9999;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0.8;">
+           
+  <a href="https://wa.me/7994667412" target="_blank" rel="noopener" style="color: #fff;
+                                                                          text-decoration: none;">
+    <img src="https://imgs.search.brave.com/mkt9M6OBNiZn2BQOW4IQtvI31KMqZB6XaL9Eb13bCIs/rs:fit:1200:1200:1/g:ce/aHR0cDovL3BsdXNw/bmcuY29tL2ltZy1w/bmcvd2hhdHNhcHAt/cG5nLXdhemFwcC1s/b2dvLXdoYXRzLXdo/YXRzYXBwLWxvZ28t/d2hhdHNhcHAtaWNv/bi0yMDUwLnBuZw" alt="WhatsApp Logo" style="height: 50px;
+                                                             margin-right: 0px;">
+    
+  </a>
+</div>
+<h2>Our Doctors</h2>
+<div class="col-md-6">
+  <div style="display: flex; justify-content: center;">
+    <img src="/static/images/doctors.png" alt="Our Doctors" style="width: 400px; height: 300px;">
+  </div>
+</div>
+<p>Our team of doctors and specialists are among the best in the industry, with years of experience and expertise in their respective fields. We are committed to providing our patients with the highest level of care, and our doctors are an integral part of that commitment.</p>
+<div class="container">
+  <h1 class="text-center mb-5" style="text-decoration: underline;">Meet Our Doctors</h1>
+  <div class="doc-container">
+    {% for doctor in doctors %}
+      <div class="doc-row">
+        <div class="doc-card shadow">
+          <img src="{{ doctor.doc_image.url }}" alt="{{ doctor.doc_name }}">
+          <h4>{{ doctor.doc_name }}</h4>
+          <p>{{ doctor.doc_spec }}</p>
+          <p>{{ doctor.dep_name }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

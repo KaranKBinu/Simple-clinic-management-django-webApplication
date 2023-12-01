@@ -1,0 +1,35 @@
+{% extends 'accounts/base.html' %}
+{% block title %}Delete Booking?{% endblock %}
+
+{% load static %}
+
+
+
+
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center mb-4">Delete Booking</h1>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Patient Name: {{ booking.patient_name }}</h4>
+          <p class="card-text">Age: {{ booking.patient_age }}</p>
+          <p class="card-text">Gender: {{ booking.patient_gender }}</p>
+          <p class="card-text">Patient Type: {{ booking.patient_type }}</p>
+          <p class="card-text">Email: {{ booking.patient_email }}</p>
+          <p class="card-text">Phone: {{ booking.patient_phone }}</p>
+          <p class="card-text">Appointment: {{ booking.appointment_date }} at {{ booking.appointment_time }}</p>
+          <p class="card-text text-danger">Are you sure you want to delete this booking?</p>
+          <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+            <a href="{% url 'doctor_dashboard' %}" class="btn btn-secondary">Cancel</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

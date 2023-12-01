@@ -1,0 +1,269 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{% endblock %}</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+
+  <!-- Custom CSS -->
+  
+</head>
+<body>
+  <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light ">
+    <div class="container">
+    
+
+		<a class="navbar-brand" href="{% url 'index' %}">
+			<img src="{% static 'images/logo2.png' %}" alt="Co-operative Hospital" class="logo">
+			<span class="hospital-name">Co-operative Hospital</span>
+		  </a>
+		  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color:white;" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+    
+
+
+        <ul class="navbar-nav mr-auto">
+           <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="doctorDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Patient?
+            </a>
+            <div class="dropdown-menu" aria-labelledby="doctorDropdown">
+              <a class="dropdown-item" href="{% url 'booking' %}">Book Now</a>
+              <a class="dropdown-item" href="{%url 'patient_login'%}">Patient Login</a>
+              <a class="dropdown-item" href="{%url 'patient_register'%}">Don't have an account Register?</a>
+              <a class="dropdown-item" href="{%url 'patient_index'%}">See your Prscriptions and appoinments</a>
+              <a class="dropdown-item" href="{%url 'patient_logout'%}">Logout</a>
+              
+            </div>
+          </li>
+        </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'booking' %}">Book Now</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Department' %}">Departments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'Doctor' %}">Doctors</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="doctorDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Doctor?
+            </a>
+            <div class="dropdown-menu" aria-labelledby="doctorDropdown">
+              <a class="dropdown-item" href="{%url 'login'%}">Login</a>
+              <a class="dropdown-item" href="{%url 'doctor_dashboard'%}">Doctor Dashboard</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  
+
+  <!-- Page content -->
+  <div class="container py-4">
+    
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <footer class="footer">
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-4">
+		  <h3>Navigation</h3>
+		  <ul class="list-unstyled">
+			<li><a href="{% url 'index' %}">Home</a></li>
+			<li><a href="{% url 'about' %}">About</a></li>
+			<li><a href="{% url 'contact' %}">Contact</a></li>
+			<li><a href="{% url 'booking' %}">Book Now</a></li>
+			<li><a href="{% url 'Department' %}">Departments</a></li>
+			<li><a href="{% url 'Doctor' %}">Doctors</a></li>
+		  </ul>
+		</div>
+		<div class="col-md-4">
+		  <h3>Connect With Us</h3>
+		  <ul class="list-unstyled">
+			<li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+			<li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+			<li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+			<li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+		  </ul>
+		</div>
+		<div class="col-md-4">
+		  <h3>Contact Us</h3>
+		  <p><i class="fas fa-map-marker-alt"></i> co- oparative hospital mullakkal,alappuzha,kerala INDIA</p>
+		  <p><i class="fas fa-phone"></i>0477 235 335</p>
+		  <p><i class="fas fa-envelope"></i> info@hospital.com</p>
+		</div>
+	  </div>
+	</div>
+  </footer>
+  
+			  <!-- jQuery and Bootstrap JS -->
+			  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+			  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+			  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+			  <!-- Custom JS -->
+			  
+			</body>
+			<style>
+
+.navbar-toggler {
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.75);
+}
+/* Add 3D effect */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  transition: 0.3s;
+}
+
+.navbar:hover {
+  box-shadow: 0 16px 32px rgba(0,0,0,0.4);
+}
+
+/* Add animation effect */
+.navbar-nav .nav-item {
+  position: relative;
+}
+
+.navbar-nav .nav-item:hover:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-out;
+  transform-origin: bottom right;
+}
+
+.navbar-nav .nav-item:hover:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-out;
+  transform-origin: bottom left;
+}
+
+.navbar-nav .nav-item:hover:before,
+.navbar-nav .nav-item:hover:after {
+  transform: scaleX(1);
+}
+
+.dropdown-menu {
+  animation: fadeInDown 0.5s;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+				.footer {
+					background-color: #f2f2f2;
+					padding: 50px 0;
+				  }
+				  
+				  .footer h3 {
+					color: #333;
+				  }
+				  
+				  .footer ul {
+					list-style: none;
+					padding: 0;
+				  }
+				  
+				  .footer li {
+					margin-bottom: 10px;
+				  }
+				  
+				  .footer a {
+					color: #333;
+				  }
+				  
+				  .footer a:hover {
+					color: #007bff;
+				  }
+				  
+				  .footer i {
+					margin-right: 10px;
+				  }
+				  
+				  .footer p {
+					margin-bottom: 10px;
+				  }
+				  
+				  @media (max-width: 767px) {
+					.footer {
+					  text-align: center;
+					}
+					
+					.footer ul {
+					  margin-bottom: 20px;
+					}
+				  }
+				  
+				.logo {
+					max-width: 40px;
+					margin-right: 10px;
+				  }
+				  
+				 .hospital-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #f15a29;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  transform: translateZ(30px);
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #f15a29;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+				
+
+		    </style>
+			</html>
+			
+			
+			

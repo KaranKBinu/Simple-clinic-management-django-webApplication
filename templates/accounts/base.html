@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-O6I9L44tYFG7fR/6RGs/XAqrw03v/X/sZq+uKp4FJr/Y5UvqSsLd6tP2vQ6y2u4+75nl/bqGcZnAefbDzfH0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background-color: #e9ecef;
+        }
+        .sidebar {
+            background-color: #1abc9c;
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            padding-top: 20px;
+           
+        }
+        .sidebar a {
+            display: block;
+            color: #000;
+            padding: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        .sidebar a:hover {
+            background-color: #148f77;
+        }
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .sidebar h4 {
+            margin: 0;
+            padding: 20px;
+            font-size: 1.5rem;
+            color: #fff;
+        }
+        .fas {
+            margin-right: 10px;
+        }
+        .btn-primary {
+            background-color: #1abc9c;
+            border-color: #1abc9c;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        .btn-primary:hover {
+            background-color: #148f77;
+            border-color: #148f77;
+        }
+
+        /* Added CSS transitions for sidebar and content */
+        .sidebar {
+            transition: width 0.3s ease;
+        }
+        .content {
+            transition: margin-left 0.3s ease;
+        }
+
+        /* Media query to change sidebar width on smaller screens */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 80px;
+            }
+            .sidebar h4 {
+                display: none;
+            }
+            .sidebar a span {
+                display: none;
+            }
+            .sidebar a i {
+                margin-right: 0;
+            }
+            .content {
+                margin-left: 80px;
+            }
+        }
+        .navbar-toggler {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.75);
+            }
+            /* Add 3D effect */
+            .navbar {
+              background-color: #fff;
+              box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+              transition: 0.3s;
+            }
+            
+            .navbar:hover {
+              box-shadow: 0 16px 32px rgba(0,0,0,0.4);
+            }
+            
+            /* Add animation effect */
+            .navbar-nav .nav-item {
+              position: relative;
+            }
+            
+            .navbar-nav .nav-item:hover:before {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background-color: #007bff;
+              transform: scaleX(0);
+              transition: transform 0.3s ease-out;
+              transform-origin: bottom right;
+            }
+            
+            .navbar-nav .nav-item:hover:after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: 100%;
+              height: 2px;
+              background-color: #007bff;
+              transform: scaleX(0);
+              transition: transform 0.3s ease-out;
+              transform-origin: bottom left;
+            }
+            
+            .navbar-nav .nav-item:hover:before,
+            .navbar-nav .nav-item:hover:after {
+              transform: scaleX(1);
+            }
+            
+            .dropdown-menu {
+              animation: fadeInDown 0.5s;
+            }
+            
+            @keyframes fadeInDown {
+              0% {
+                opacity: 0;
+                transform: translate3d(0, -20px, 0);
+              }
+              100% {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+              }
+            }
+            .footer {
+                background-color: #f2f2f2;
+                padding-left:200px;
+                padding-top:50px;
+              }
+              
+              .footer h3 {
+                color: #333;
+              }
+              
+              .footer ul {
+                list-style: none;
+                padding: 0;
+              }
+              
+              .footer li {
+                margin-bottom: 10px;
+              }
+              
+              .footer a {
+                color: #333;
+              }
+              
+              .footer a:hover {
+                color: #007bff;
+              }
+              
+              .footer i {
+                margin-right: 10px;
+              }
+              
+              .footer p {
+                margin-bottom: 10px;
+              }
+              
+              @media (max-width: 767px) {
+                .footer {
+                  text-align: center;
+                  padding-left:0;
+                  padding-top:50px;
+                }
+                
+                .footer ul {
+                  margin-bottom: 20px;
+                }
+              }
+              
+            .logo {
+                max-width: 40px;
+                margin-right: 10px;
+              }
+              
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Doctor Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'doctor_dashboard' %}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'Prescription_success' %}"><i class="fas fa-calendar-check"></i><span>Prescriptions</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-calendar-check"></i><span>Go Back To Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block  sidebar collapse" style="background-color: #1abc9c;">
+                <div class="sidebar-sticky pt-3">
+                    <h4>Doctor Dashboard</h4>
+                    <ul class="nav flex-column">
+                        <li class="nav-item" >
+                            <a class="nav-link"style="border-radius:50px;" href="{% url 'doctor_dashboard' %}"><i class="fas fa-tachometer-alt" ></i><span>Dashboard</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="border-radius:50px;" href="{% url 'Prescription_success' %}"><i class="fas fa-calendar-check"></i><span>Prescriptions</span></a>
+                        </li>
+                        <li class="nav-item" >
+                            <a class="nav-link"style="border-radius:50px;" href="{% url 'index' %}"><i class="fas fa-tachometer-alt" ></i><span>Go Home</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="border-radius:50px;" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                {% block content %}
+                {% endblock %}
+            </main>
+        </div>
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h3>Navigation</h3>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'booking' %}">Book Now</a></li>
+                <li><a href="{% url 'Department' %}">Departments</a></li>
+                <li><a href="{% url 'Doctor' %}">Doctors</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h3>Connect With Us</h3>
+              <ul class="list-unstyled">
+                <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h3>Contact Us</h3>
+              <p><i class="fas fa-map-marker-alt"></i> co- oparative hospital mullakkal,alappuzha,kerala INDIA</p>
+              <p><i class="fas fa-phone"></i>0477 235 335</p>
+              <p><i class="fas fa-envelope"></i> info@hospital.com</p>
+            </div>
+          </div>
+       
+      </footer>
+    </div>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/esm/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="sidebar"]').click(function () {
+                $('.sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

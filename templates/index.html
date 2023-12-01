@@ -1,0 +1,338 @@
+{% extends 'base.html' %}
+{% block title %}Co-operative Hospital{% endblock %}
+{%load static %}
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+
+
+
+  </head>
+{% block content %}
+
+
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+
+  <div class="carousel-indicators">
+
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner carousel-fade">
+    <div class="carousel-item active">
+      <img src="{% static '/images/bg3.jpg'%}" class="d-block w-100 carousel-img" alt="Image 1">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static '/images/doctors.png'%}" class="d-block w-100 carousel-img" alt="Image 2">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/digital-prescription.jpg' %}" class="d-block w-100 carousel-img" alt="Image 3">
+    </div>
+ <div class="carousel-caption" style="color: black;">
+      <h1>Providing Quality Healthcare Services to Our Community</h1>
+
+<a href="{% url 'patient_login' %}" class="btn bt-primary">Patient Login</a>
+<a href="{% url 'patient_register' %}" class="btn bt-primary"> Registration</a>
+</div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<hr>
+<br>
+<style>
+/* Set the background color of the carousel */
+#myCarousel {
+  background-color: #f8f9fa;
+}
+
+/* Set the border radius of the carousel */
+.carousel-inner {
+  border-radius: 20px;
+}
+
+/* Style the carousel indicators */
+.carousel-indicators button {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.carousel-indicators .active {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Style the carousel caption */
+.carousel-caption {
+  
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the carousel caption heading */
+.carousel-caption h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #070809;
+  text-shadow: 2px 2px #f8f9fa;
+}
+
+/* Style the carousel caption paragraph */
+.carousel-caption p {
+  font-size: 1.2rem;
+  color: #6c757d;
+  text-shadow: 1px 1px #f8f9fa;
+}
+
+/* Style the carousel caption button */
+.carousel-caption .btn {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  font-weight: bold;
+  text-shadow: none;
+  transition: all 0.3s ease;
+}
+  .carousel-control-prev, .carousel-control-next {
+    background-color: transparent;
+    border: none;
+  }
+.carousel-caption .btn:hover {
+  background-color: #fff;
+  color: #0d6efd;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+  .carousel-item img.carousel-img {
+    width: 600px;
+    height: 400px;
+  }
+</style>
+
+
+
+
+
+
+
+
+<section class="hero-section">
+    <div class="container">
+        <h1>Welcome to Co-operative Hospital</h1>
+       
+<div style="background-color: #25d366;
+            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px ;
+            border-radius: 30px;
+            box-shadow: 0px 3px 3px #ccc;
+            z-index: 9999;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0.8;">
+           
+  <a href="https://wa.me/7994667412" target="_blank" rel="noopener" style="color: #fff; te-decoration: none;">
+    <img src="https://imgs.search.brave.com/mkt9M6OBNiZn2BQOW4IQtvI31KMqZB6XaL9Eb13bCIs/rs:fit:1200:1200:1/g:ce/aHR0cDovL3BsdXNw/bmcuY29tL2ltZy1w/bmcvd2hhdHNhcHAt/cG5nLXdhemFwcC1s/b2dvLXdoYXRzLXdo/YXRzYXBwLWxvZ28t/d2hhdHNhcHAtaWNv/bi0yMDUwLnBuZw" alt="WhatsApp Logo" style="height: 50px;
+                                                             margin-right: 0px;">
+    
+  </a>
+</div>
+
+
+
+<div style="text-align: center;">
+  <a href="tel:+917994667412">
+    <button id="emergency-btn" style="background-color: #f44336; color: #fff; padding: 10px; border: none; border-radius: 50px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);">
+      Emergency! Call now
+    </button>
+  </a>
+</div>
+
+
+<style>
+  @keyframes color-change {
+    0% { background-color: red; }
+    50% { background-color: orange; }
+    100% { background-color: red; }
+  }
+  
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  #emergency-btn {
+    animation: color-change 2s ease-in-out infinite, blink 1s ease-in-out infinite;
+  }
+</style>
+<div style="position: fixed; bottom: 35px; right: 20px; z-index: 9999;">
+  <a href="{% url 'booking' %}">
+    <button style="background-color: #0077B5; color: white; font-size: 16px;
+                   border: none; padding: 10px; cursor: pointer;
+                   border-radius: 70px;
+                   width: 130px;
+                   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+                   opacity: 0.8;
+                   ">
+      Book Now
+    </button>
+  </a>
+</div>
+
+
+
+<div class="page-container">
+   
+    <p>Thank you for visiting our website! Co-operative Hospital is a leading healthcare provider dedicated to delivering the highest quality medical services to our patients. Our state-of-the-art facilities and highly trained staff ensure that every patient receives personalized and compassionate care.</p>
+   <hr>
+   <h2>Booking</h2>
+<p>Welcome to our booking page! Here you can easily schedule an appointment with one of our healthcare professionals. To get started, simply select your preferred date and time, as well as the type of appointment you require.</p>
+<p>Once you have submitted your booking request, one of our team members will be in touch to confirm your appointment details. If you have any questions or concerns, please don't hesitate to contact us using the information provided on our <a href="{% url 'contact' %}" style="color:#1400f4; font-weight:bold;">Contact</a> page.</p>
+<p>By clicking on <b>Book now</b> button you can book your appointment</p>
+<div style="text-align: center;">
+  <a href="{% url 'booking' %}">
+    <button id="book-now-button" style="background-color: blue; color: white; font-size: 16px;
+                   border: none; padding: 10px; cursor: pointer;
+                   border-radius: 70px;
+                   width: 130px;
+                   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+                   opacity: 0.8;
+                    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);" 
+            onclick="this.style.backgroundColor = 'lightblue';">
+      Book Now
+    </button>
+  </a>
+</div>
+  <hr>
+  <!--emergency-->
+<h2>Emergency Department and Services</h2>
+    <div class="col-md-6">
+<div style="display: flex; justify-content: center;">
+  <img src="/static/images/emergency.jpg" alt="Emergency Department" style="width: 400px; height: 300px;">
+</div>
+    </div>
+<p>Our hospital's emergency department is staffed by highly trained medical professionals who are available around the clock to provide immediate medical attention to patients in critical condition. We offer a range of emergency services, including:</p>
+<ul style="text-align: left;">
+    <li>Triage and assessment of patients to determine the severity of their condition</li>
+    <li>Advanced cardiac life support for patients experiencing heart attacks and other cardiac emergencies</li>
+    <li>Respiratory support for patients experiencing breathing difficulties</li>
+    <li>Access to a blood bank and pharmacy to quickly provide necessary medications and transfusions</li>
+    <li>Advanced imaging and diagnostic services, including X-rays, CT scans, and MRIs</li>
+    <li>Emergency helipad for rapid transport of critically ill patients to and from our hospital</li>
+</ul>
+<p>If you or a loved one requires emergency medical attention, please do not hesitate to visit our hospital's emergency department. Our team is dedicated to providing immediate and effective care to patients in their time of need.</p>
+<div style="background-color: red; color: white; padding: 10px; border-radius: 5px;">
+  <h4>Emergency Contact Numbers:</h4>
+  <ul>
+    <li>Emergency Department: 911</li>
+    <li>Emergency Medical Services: 102</li>
+    <li>Poison Control Center: 1800-222-1222</li>
+    <li>Snakebite Helpline: 1800-180-1104</li>
+  </ul>
+  <p>In case of any emergency, please call the appropriate number above immediately. Our hospital's emergency department is also available 24/7 and can provide immediate assistance.</p>
+</div>
+
+
+  <hr>
+  
+<h2>Hospital Facilities</h2>
+    <div class="col-md-6">
+<div style="display: flex; justify-content: center;">
+  <img src="/static/images/facilities.jpg" alt="Facilities" style="width: 400px; height: 300px;" align="center">
+</div>
+    </div>
+<p>At our hospital, we are committed to providing our patients with the best possible care in a comfortable and welcoming environment. Our facilities include:</p>
+
+<ul style="text-align: left;">
+    <li>24/7 Emergency Department with state-of-the-art equipment and highly trained medical professionals</li>
+    <li>Fully equipped Intensive Care Unit (ICU)</li>
+    <li>Advanced diagnostic services including X-rays, CT scans, and MRI</li>
+    <li>On-site laboratory services for quick and accurate test results</li>
+    <li>Pharmacy with a wide range of medications and experienced pharmacists</li>
+    <li>Outpatient clinics for a variety of medical specialties</li>
+    <li>Private patient rooms with modern amenities for comfort and convenience</li>
+    <li>Cafeteria serving healthy and delicious meals for patients, visitors, and staff</li>
+    <li>Free Wi-Fi throughout the hospital</li>
+    <li>Parking facilities with ample space for patients and visitors</li>
+</ul>
+<p>Our hospital is constantly investing in new technologies and services to improve patient outcomes and provide the highest level of care possible. We are committed to ensuring that our facilities meet the needs of our patients and their families in every way possible.</p>
+
+  <hr>
+  
+    <h2>About Us</h2>
+<a href="{% url 'about' %}">
+      <div class="col-md-6">
+<div style="display: flex; justify-content: center;">
+  <img src="/static/images/about.jpg" alt="About Us"style="width: 400px; height: 300px;">
+</div>
+    </div>
+
+</a>
+<p>Co-operative Hospital was founded in 1985 with the goal of providing accessible and affordable healthcare to the local community. Over the years, we have grown to become one of the most respected and trusted hospitals in the region, with a team of more than 500 dedicated healthcare professionals.</p>
+
+  <hr>
+  
+<h2>Our Departments</h2>
+<a href="{% url 'Department' %}">
+      <div class="col-md-6">
+<div style="display: flex; justify-content: center;">
+      <img src="/static/images/departments.png" alt="Our Departments" style="width: 400px; height: 300px;">
+</div>
+    </div>
+
+</a>
+<p>We offer a wide range of medical services across our various departments, including:</p>
+<ul style="text-align: left;">
+{% for department in departments %}
+    <li>{{ department.dep_name }}</li>
+{% endfor %}
+
+
+</ul>
+<p>For more information about our departments and the services we offer, please visit our <a href="{% url 'Department' %}" style="color:#1400f4; font-weight:bold;">Departments</a> page.</p>
+<h2>Our Doctors</h2>
+<a href="{% url 'Doctor' %}">
+   <div class="col-md-6">
+<div style="display: flex; justify-content: center;">
+ <img src="/static/images/doctors.png" alt="Our Doctors" style="width: 400px; height: 300px;">
+</div>
+    </div>
+   
+</a>
+<p>Our team of doctors and specialists are among the best in the industry, with years of experience and expertise in their respective fields. We are committed to providing our patients with the highest level of care, and our doctors are an integral part of that commitment.</p>
+<p>To learn more about our team of doctors, please visit our <a href="{% url 'Doctor' %}" style="color:#1400f4; font-weight:bold;">Doctors</a> page.</p>
+
+  <hr>
+
+
+  
+<h2>Digital Prescription</h2>
+  <div class="col-md-6">
+<div style="display: flex; justify-content: center;">
+  <img src="/static/images/digital-prescription.jpg" alt="Digital Prescription" style="width: 400px; height: 300px;">
+</div>
+    </div>
+   
+
+<p>We offer digital prescription services for our patients, allowing them to easily access and manage their medications online. Our digital prescription platform is secure and user-friendly, making it easy for patients to stay on top of their healthcare needs.</p>
+ 
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+
+
+{% endblock %}

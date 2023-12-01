@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title%}Your Booking was Successful {%endblock%}
+
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title text-center">Booking Successful!</h5>
+            <p class="card-text text-center">Our team will contact you soon for confirmation.</p>
+            <hr>
+            <div class="booking-details">
+             <center> <h4><u>Patient Details</u></h4></center>
+              <ul>
+                <li><strong>Name:</strong> {{ booking.patient_name }}</li>
+                <li><strong>Patient Type:</strong> {{ booking.patient_type }}</li>
+                <li><strong>Email:</strong> {{ booking.patient_email }}</li>
+                <li><strong>Contact:</strong> {{ booking.patient_phone }}</li>
+                <li><strong>Gender:</strong> {{ booking.get_patient_gender_display }}</li>
+                <li><strong>Age:</strong> {{ booking.patient_age }}</li>
+              </ul>
+              <hr>
+              <h4>Booked Doctor</h4>
+              <p>Dr.{{ booking.doctor.doc_name }}</p>
+
+<p><strong>NOTE:</strong> Take a screenshot of this page and show it at the reception to receive your physical Token</p>
+<style>
+  p strong {
+  color: #FF5733;
+}
+
+p {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+</style>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .card {
+      animation: fadein 1s;
+    }
+    .booking-details {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .booking-details h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .booking-details ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 10px;
+    }
+    .booking-details ul li {
+      margin-bottom: 5px;
+    }
+  </style>
+
+  <script>
+    $(document).ready(function(){
+      $(".card").hide().fadeIn(1000);
+    });
+  </script>
+{% endblock %}

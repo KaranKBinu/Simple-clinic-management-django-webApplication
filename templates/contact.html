@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block title %}contact us{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="col-md-6">
+      <div style="background-color: #25d366;
+            color: #fff;
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px ;
+            border-radius: 30px;
+            box-shadow: 0px 3px 3px #ccc;
+            z-index: 9999;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+            opacity: 0.8;">
+           
+  <a href="https://wa.me/7994667412" target="_blank" rel="noopener" style="color: #fff;
+                                                                          text-decoration: none;">
+    <img src="https://imgs.search.brave.com/mkt9M6OBNiZn2BQOW4IQtvI31KMqZB6XaL9Eb13bCIs/rs:fit:1200:1200:1/g:ce/aHR0cDovL3BsdXNw/bmcuY29tL2ltZy1w/bmcvd2hhdHNhcHAt/cG5nLXdhemFwcC1s/b2dvLXdoYXRzLXdo/YXRzYXBwLWxvZ28t/d2hhdHNhcHAtaWNv/bi0yMDUwLnBuZw" alt="WhatsApp Logo" style="height: 50px;
+                                                             margin-right: 0px;">
+    
+  </a>
+</div>
+      <h1>Contact Us</h1>
+      {% if success_message %}
+        <p class="success">{{ success_message }}</p>
+      {% endif %}
+      <form method="post" class="contact-form">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="{{ form.name.id_for_label }}">Name</label>
+          {{ form.name }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.email.id_for_label }}">Email</label>
+          {{ form.email }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.subject.id_for_label }}">Subject</label>
+          {{ form.subject }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.message.id_for_label }}">Message</label>
+          {{ form.message }}
+        </div>
+      <button type="submit" class="btn btn-lg btn-custom">Submit</button>
+
+      </form>
+    </div>
+    <div class="col-md-6">
+      <h2>Contact Information</h2>
+      <ul>
+        <li><i class="fa fa-phone"></i> Head Department : 1234554321</li>
+        <li><i class="fa fa-phone"></i> Reception: 1234567899</li>
+        <li><i class="fa fa-envelope"></i> Email: contact@co-operative_alpy.com</li>
+        <li><i class="fa fa-map-marker"></i> Address: abcd road mullakkal alappuzha, Kerala, INDIA</li>
+      </ul>
+    </div>
+  </div>
+
+  <style>
+    .contact-form {
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type=text], input[type=email], textarea {
+      border-radius: 5px;
+      border: none;
+      padding: 10px;
+      width: 100%;
+    }
+.btn-custom {
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+.btn-custom:hover {
+  background-color: #2980b9;
+}
+
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+    .btn-primary {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+  }
+
+  .btn-primary:focus {
+    box-shadow: none;
+  }
+  label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="number"], select, textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #3e2af3;
+  box-shadow: 0px 0px 8px rgba(243, 42, 42, 0.2);
+}
+
+.btn {
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #f32a2a;
+  border-color: #ff6347;
+}
+
+.btn-primary:hover {
+  background-color: #4749ff;
+}
+
+
+
+
+
+</style>
+  </style>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}Departments{% endblock %}
+{% block content %}
+<div class="container">
+  <h1 class="dep-title">Our Departments</h1>
+
+  <hr>
+  <div class="row justify-content-center">
+    {% for d in dept %}
+      <div class="col-md-4 mb-4">
+        <div class="card card-sm shadow">
+          <div class="card-body">
+            <h4 class="card-title card-heading">{{ d.dep_name }}</h4>
+            <div class="dep-description scrollable">
+              <p class="card-text">{{ d.dep_description }}</p>
+            </div>
+          </div>
+        </div>
+      </div> 
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+
+.card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-heading {
+  color: #212529;
+}
+
+.scrollable {
+  height: 120px;
+  overflow-y: scroll;
+}
+
+.dep-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #343a40;
+}
+
+hr {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #dee2e6;
+}
+
+
+
+@media (max-width: 767.98px) {
+  .card-sm {
+    width: 100%;
+  }
+}
+</style>
+{%endblock%}
